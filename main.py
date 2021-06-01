@@ -8,7 +8,7 @@ import math
 from collections import Counter
 
 def main():
-    path = Path("doc", "table76.csv")
+    path = Path("doc", "table75.csv")
     table = pd.read_csv(path, header=None)
     samples = table[0].values
 
@@ -34,12 +34,13 @@ def main():
 
     freq = math.ceil(Counter(samples).most_common(1)[0][1] / p.max())
 
-    ax1.plot(x, p * freq, 'r', linewidth=1, )
+    ax1.plot(x, p * freq, 'r', linewidth=1)
 
     ax1.set_title('Histogram')
 
     # ax2.bar(x, (res.cumcount / len(samples)) * 100, width=res.binsize)
     ax2.scatter(x, (res.cumcount / len(samples)) * 100)
+    
     ax2.set_title('Cumulative histogram')
     ax2.set_xlim([x.min(), x.max()])
     # ax2.set_ylim([0,100])
