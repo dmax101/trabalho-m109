@@ -22,15 +22,16 @@ def main():
         res.cumcount.size
     )
 
+    media = samples.mean(axis=0)
+    std_dev = stats.tstd(samples)
+
     fig = plt.figure(figsize=(10, 4))
     ax1 = fig.add_subplot(1, 2, 1)
     ax2 = fig.add_subplot(1, 2, 2)
     ax1.hist(samples, bins=bins)
 
-    mu = samples.mean(axis=0)
-    std = samples.std(axis=0)
     xmin, xmax = plt.xlim()
-    p = stats.norm.pdf(x, mu, std)
+    p = stats.norm.pdf(x, media, std_dev)
 
     freq = math.ceil(Counter(samples).most_common(1)[0][1] / p.max())
 
@@ -47,8 +48,6 @@ def main():
 
     plt.show()
 
-    media = samples.mean(axis=0)
-    std_dev = samples.std(axis=0)
     n = len(samples)
     statistic, pvalue = stats.kstest(
         samples,
