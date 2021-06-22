@@ -48,9 +48,10 @@ ylabel("Frequency")
 figure
 hold on
 normplot(samples)
-title("Probability Plot of Hours")
+title({'{\bf\fontsize{14} Probability Plot of Hours}'; 'Normal'},'FontWeight','Normal')
+yticklabels(str2double(yticklabels()) * 100)
 xlabel("Hours")
-ylabel("Probability")
+ylabel("Percent")
 
 %% *Amostras para o exercício 7.33 - (sample76)*
 fprintf('-----------------------\n')
@@ -96,6 +97,7 @@ ylabel("Frequency")
 figure
 hold on
 normplot(samples)
-title("Probability Plot of Hours")
+title({'{\bf\fontsize{14} Probability Plot of Hours}'; 'Normal'},'FontWeight','Normal')
+yticklabels(str2double(yticklabels()) * 100)
 xlabel("Hours")
-ylabel("Probability")
+ylabel("Percent")
