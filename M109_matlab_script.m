@@ -50,7 +50,7 @@ hold on
 normplot(samples)
 title("Probability Plot of Hours")
 xlabel("Hours")
-ylabel("Percent")
+ylabel("Probability")
 
 %% *Amostras para o exercício 7.33 - (sample76)*
 fprintf('-----------------------\n')
@@ -98,4 +98,4 @@ hold on
 normplot(samples)
 title("Probability Plot of Hours")
 xlabel("Hours")
-ylabel("Percent")
+ylabel("Probability")
